@@ -47,3 +47,20 @@ Por último, en la última versión se refina el final del flujo indicando un ca
 
 En la v1 se indicaba si la respuesta era correcta o incorrecta a través de colores, esto se corrige a partir de la versión 3 indicando si es o no correcta a través de texto legible.
 
+## Pruebas de la actividad 2
+
+| Prueba | Pasos | Resultado esperado | Resultado observado | Evidencia |
+| :--- | :--- | :--- | :--- | :--- |
+| **Respuesta correcta** | Elegir la opción correcta de una pregunta | Se informa del acierto y se actualiza la puntuación | Se muestra el texto <<Respuesta correcta>>, se deshabilitan las opciones, el marcador suma los puntos correspondientes y se muestra el botón de <<Siguiente pregunta>>. | Texto sacado del juego: <<Respuesta correcta. Puntuación actual: 10 de 100 puntos.>> |
+| **Respuesta incorrecta** | Elegir una opción incorrecta | Se informa del error sin bloquear la partida | Se muestra el mensaje <<Respuesta incorrecta>> junto con cual era la opción correcta, se muestra la puntuación actual sobre 100 y aparece el botón de <<Siguiente pregunta>>. | Texto sacado del juego: <<Respuesta incorrecta. La respuesta correcta es: 1492.
+Puntuación actual: 10 de 100 puntos.>>
+|
+| **Última pregunta** | Completar todas las preguntas | Se muestra el resultado final una sola vez | Al avanzar a la pantalla final se muestra la puntuación final sobre 100 sin duplicar elementos del DOM. | Puntuación final visible y árbol de elementos verificado con las DeVTools |
+| **Reinicio** | Pulsar el botón de reiniciar | Vuelve al estado inicial y no duplica controles | Se reestablece al puntuación a 0, vuelve a la primera pregunta y los botones no quedan duplicados ni bloqueados. | Contador a cero y foco devuelto al estado inicial. |
+| **Teclado** | Tabular y activar controles con teclado | El foco es visible y el orden es coherente | Navegación completa mediante Tab, selección con Enter/Espacio y contorno. | Navegación probada sin uso de ratón. |
+| **Sintaxis** | Solicitar la comprobación de sintaxis de `app.js` | No se informa de error de sintaxis | Al ejecutar node --check app.js la salida fue limpia. | Salida de la consola limpia al ejecutar el comando node --check app.js. |
+
+## Propuesta actividad 10
+| Porpuesta | Decisión: aceptar, adaptar o rechazar | Justificación | Pruebas posteriores |
+| :--- | :--- | :--- | :--- | :--- |
+| **No anular los atajos del navegador** | Aceptar | Actualmente el juego impide el uso de ciertos atajos del navegador debido a que event.key bloquea las teclas a, s y d | Al usar los atajos ctrl + a, ctrl + d, ctrl + a funcionan correctamente, el juego sigue funcionando de forma correcta (todos los botones responden bien) y no se ha perdido la navegación por teclado. Al realizar la revisión de la sintaxis no han ocurrido errores. |

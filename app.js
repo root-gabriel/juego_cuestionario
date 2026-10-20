@@ -169,6 +169,12 @@ function restartQuiz() {
 
 // Navegación por teclado con flechas o WASD entre las opciones de respuesta
 optionsContainer.addEventListener("keydown", (event) => {
+  // No anular atajos del navegador o del lector de pantalla que usen
+  // Ctrl, Cmd o Alt junto con una de las teclas de navegación.
+  if (event.ctrlKey || event.metaKey || event.altKey) {
+    return;
+  }
+
   const activeButtons = Array.from(
     optionsContainer.querySelectorAll(".option-button:not(:disabled)")
   );
