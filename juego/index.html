@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahora Respondes Tú</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Ahora Respondes Tú</h1>
+  </header>
+
+  <main id="main-content" class="container">
+    <!-- Vista de preguntas -->
+    <section id="quiz-screen" aria-labelledby="question-heading">
+      <h2 id="question-heading">Pregunta</h2>
+      
+      <form id="quiz-form" novalidate>
+        <fieldset id="options-fieldset">
+          <legend id="question-text" class="question-legend"></legend>
+          <div id="options-container" class="options-list"></div>
+        </fieldset>
+      </form>
+
+      <div id="feedback-container" class="feedback-box" role="status" aria-live="polite" hidden>
+        <p id="feedback-text" class="feedback-message"></p>
+        <p id="current-score" class="score-message"></p>
+      </div>
+
+      <div class="actions">
+        <button type="button" id="next-btn" class="btn-primary" hidden>
+          Siguiente pregunta
+        </button>
+      </div>
+    </section>
+
+    <!-- Vista de resultado final -->
+    <section id="result-screen" aria-labelledby="result-heading" hidden>
+      <h2 id="result-heading">Juego terminado</h2>
+      <p id="final-score-text" class="final-score"></p>
+      <button type="button" id="restart-btn" class="btn-primary">
+        Reiniciar juego
+      </button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
